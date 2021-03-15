@@ -1,3 +1,6 @@
+﻿###########################
+esse bot usa python3.9
+##########################
 import random
 from time import sleep
 
