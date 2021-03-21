@@ -1,12 +1,13 @@
-###########################
-#esse bot usa python3.9
 ##########################
+# esse bot usa python3.9 #
+##########################
+
 import random
 from time import sleep
 
 driver = webdriver.Firefox(executable_path='c://geckodriver.exe') #local cm seu geckodriver.exe
 driver.get('') #url da enquete
-teste = driver.find_elements_by_xpath("//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
+find_xpath = driver.find_elements_by_xpath("//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
 
 count = 0
 while True:
@@ -15,7 +16,7 @@ while True:
         sleep(1)
         driver.back()
         sleep(1)
-        teste = driver.find_elements_by_xpath(
+        find_xpath = driver.find_elements_by_xpath(
             "//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
     sleep(2)
     for x in range(0, tamanho): #colocar a quantidade de enquetes
@@ -23,6 +24,6 @@ while True:
         if x != 0:
             ale = ale + (x * 3)
         print(ale)
-        teste[ale].click()
+        find_xpath[ale].click()
         if x == 5:
             count += 1
