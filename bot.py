@@ -1,15 +1,13 @@
-##########################
-# esse bot usa python3.9 #
-##########################
-
 import random
 from time import sleep
+from selenium import webdriver
 
 driver = webdriver.Firefox(executable_path='c://geckodriver.exe') #local cm seu geckodriver.exe
-driver.get('') #url da enquete
+driver.get('https://docs.google.com/forms/d/e/1FAIpQLSd-rIVmVmNl313o4aY6Lg7jGiUQxKOKPXgA7mHc_JKPgLDkOw/viewform') #url da enquete
 find_xpath = driver.find_elements_by_xpath("//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
 
 count = 0
+
 while True:
     if count != 0:
         driver.find_element_by_xpath('//div[@jsname="M2UYVd"]').click()
@@ -19,11 +17,9 @@ while True:
         find_xpath = driver.find_elements_by_xpath(
             "//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
     sleep(2)
-    for x in range(0, tamanho): #colocar a quantidade de enquetes
-        ale = random.randint(0, tamanho) # colocar a quantidade de opções
-        if x != 0:
-            ale = ale + (x * 3)
-        print(ale)
+    for x in range(0, len(driver.find_elements_by_xpath("//div[@class='freebirdFormviewerComponentsQuestionBaseRoot']"))):
+        ale = random.randint(0, num) # colocar a quantidade de opções
+        ale = ale + (x * 3)
         find_xpath[ale].click()
         if x == 5:
             count += 1
