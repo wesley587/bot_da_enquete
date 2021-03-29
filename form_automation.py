@@ -18,7 +18,7 @@ while True:
             "//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
     sleep(2)
     for x in range(0, len(driver.find_elements_by_xpath("//div[@class='freebirdFormviewerComponentsQuestionBaseRoot']"))):
-        choice = random.randint(0, )# Add the number of questions 
+        choice = random.randint(0, )# Add alternatives number 
         choice = choice + (x * 3)
         find_xpath[choice].click()
         if x == 5:
