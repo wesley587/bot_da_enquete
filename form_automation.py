@@ -2,7 +2,7 @@ import random
 from time import sleep
 from selenium import webdriver
 
-driver = webdriver.Firefox(executable_path='c://geckodriver.exe') #local cm seu geckodriver.exe
+driver = webdriver.Firefox(executable_path='') #Adress with your geckodriver.exe
 driver.get('') #url da enquete
 find_xpath = driver.find_elements_by_xpath("//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
 
@@ -18,7 +18,7 @@ while True:
             "//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
     sleep(2)
     for x in range(0, len(driver.find_elements_by_xpath("//div[@class='freebirdFormviewerComponentsQuestionBaseRoot']"))):
-        choice = random.randint(0, # colocar a quantidade de opções) 
+        choice = random.randint(0, )# Add the number of questions 
         choice = choice + (x * 3)
         find_xpath[choice].click()
         if x == 5:
