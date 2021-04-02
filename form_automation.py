@@ -3,7 +3,7 @@ from time import sleep
 from selenium import webdriver
 
 driver = webdriver.Firefox(executable_path='') #Adress with your geckodriver.exe
-driver.get('') #url da enquete
+driver.get('') #Url
 find_xpath = driver.find_elements_by_xpath("//div[@class='appsMaterialWizToggleRadiogroupOffRadio exportOuterCircle']")
 
 count = 0
